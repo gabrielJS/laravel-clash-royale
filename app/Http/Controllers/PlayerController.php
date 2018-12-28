@@ -32,6 +32,7 @@ class PlayerController extends Controller
         } catch (Exception\BadResponseException $e) {
             $res = $e->getResponse();
             $responseBodyAsString = $res->getBody()->getContents();
+            return $responseBodyAsString;
         }
 
         return $res->getBody()->getContents();
